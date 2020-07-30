@@ -108,7 +108,7 @@
             $('.btn').tooltip();
 
             $('#user-table').on('click', '.delete-user', function() {
-                if (confirm("Are you sure you want to delete this user?")) {
+                if (confirm("के तपाई निश्चित यो प्रयोगकर्ता हटाउन चाहानुहुन्छ?")) {
                     let id = this.dataset.id,
                         url = "{{ route('user.destroy', ':id') }}";
 
