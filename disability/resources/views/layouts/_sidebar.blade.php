@@ -18,11 +18,21 @@
                     </a>
                 </li>
             </ul>
+            @can('isAdmin')
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-item">
                     <a href="{{ route('user.index') }}" class="nav-link {{ Request::is('user*') ? "active" : "" }}">
                         <i class="nav-icon fas fa-users"></i>
                         <p>प्रयोगकर्ता व्यवस्थापन</p>
+                    </a>
+                </li>
+            </ul>
+            @endcan
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <li class="nav-item">
+                    <a href="{{ route('disable.index') }}" class="nav-link {{ Request::is('disable*') ? "active" : "" }}">
+                        <i class="nav-icon fas fa-wheelchair"></i>
+                        <p>अपाङ्ग व्यक्ती व्यवस्थापन</p>
                     </a>
                 </li>
             </ul>

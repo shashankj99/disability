@@ -11,5 +11,12 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-// user routes
-Route::resource('user', 'UserController');
+Route::group(['middleware' => ['can:isAdmin']], function () {
+    // user route
+    Route::resource('user', 'UserController'); 
+});
+
+// disability routes
+Route::match(['get', 'post'], '/disable', 'DisableController@index')->name('disable.index');
+Route::post('disable', 'DisableController@store')->name('disable.store');
+Route::resource('disable', 'DisableController', ['except' => ['index', 'store']]);

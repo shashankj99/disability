@@ -24,7 +24,7 @@ return [
 
     'cipher' => 'AES-256-CBC',
 
-    'admin' => 'shashankj677@gmail.com',
+    'admin' => 'info@bitcodenepal.com',
 
     'providers' => [
 
