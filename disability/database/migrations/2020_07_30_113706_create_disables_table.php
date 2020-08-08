@@ -35,7 +35,7 @@ class CreateDisablesTable extends Migration
             $table->date('citizenship_issued_date_english')->nullable();
             $table->string('disability_category')->charset('utf8')->collation('utf8_unicode_ci');
             $table->string('disability_severity')->charset('utf8')->collation('utf8_unicode_ci');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });

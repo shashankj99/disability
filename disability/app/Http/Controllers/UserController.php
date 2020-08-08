@@ -39,7 +39,7 @@ class UserController extends Controller
                     'password' => Hash::make($request->password)
                 ]);
 
-                Session::flash('success', "New User registered successfully");
+                Session::flash('success', "नयाँ प्रयोगकर्ता सफलतापूर्वक दर्ता गरिएको छ।");
                 return redirect()->route('user.index');
             } else {
                 return redirect()->back()
@@ -56,7 +56,7 @@ class UserController extends Controller
 
     // this route is not necessary
     public function show(User $user) {
-        Session::flash('info', "This URL doesn't exist");
+        Session::flash('info', "यो URL अवस्थित छैन");
         return redirect()->back();
     }
 
@@ -85,7 +85,7 @@ class UserController extends Controller
                 $user->update($formData);
             }
 
-            Session::flash('success', "User updated successfully");
+            Session::flash('success', "प्रयोगकर्ता सफलतापूर्वक अपडेट गरियो");
             return redirect()->route('user.index');            
         } catch (\Exception $error) {
             return redirect()->back()
@@ -98,9 +98,9 @@ class UserController extends Controller
     public function destroy(User $user) {
         if ($user) {
             $user->delete();
-            return response('User '. $user->name. ' is deleted successfully');
+            return response('प्रयोगकर्ता '. $user->name. ' सफलतापूर्वक हटाइएको छ');
         } else {
-            return response('Sorry! Unable to find the user');
+            return response('माफ गर्नुहोस्! प्रयोगकर्ता फेला पार्न असमर्थ');
         }
         
     }

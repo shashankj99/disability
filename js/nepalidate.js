@@ -5,7 +5,7 @@ var ST = jQuery.noConflict();
 			npdMonth: true,
 			npdYear: true,
 			ndpTriggerButton: true,
-			ndpTriggerButtonText: 'Date',
+			ndpTriggerButtonText: 'मिति',
 			ndpTriggerButtonClass: 'btn btn-primary btn-sm'
 		});
                 ST('#nepaliDate2').nepaliDatePicker({
@@ -13,7 +13,7 @@ var ST = jQuery.noConflict();
 			npdMonth: true,
 			npdYear: true,
 			ndpTriggerButton: true,
-			ndpTriggerButtonText: 'Date',
+			ndpTriggerButtonText: 'मिति',
 			ndpTriggerButtonClass: 'btn btn-primary btn-sm'
 		});
                 ST('#nepaliDate4').nepaliDatePicker({
@@ -21,7 +21,7 @@ var ST = jQuery.noConflict();
 			npdMonth: true,
 			npdYear: true,
 			ndpTriggerButton: true,
-			ndpTriggerButtonText: 'Date',
+			ndpTriggerButtonText: 'मिति',
 			ndpTriggerButtonClass: 'btn btn-primary btn-sm'
 		});
 		ST('#nepaliDate5').nepaliDatePicker({
@@ -29,7 +29,7 @@ var ST = jQuery.noConflict();
 			npdMonth: true,
 			npdYear: true,
 			ndpTriggerButton: true,
-			ndpTriggerButtonText: 'Date',
+			ndpTriggerButtonText: 'मिति',
 			ndpTriggerButtonClass: 'btn btn-primary btn-sm'
 		});
                 ST('#nepaliDate6').nepaliDatePicker({
@@ -37,7 +37,7 @@ var ST = jQuery.noConflict();
 			npdMonth: true,
 			npdYear: true,
 			ndpTriggerButton: true,
-			ndpTriggerButtonText: 'Date',
+			ndpTriggerButtonText: 'मिति',
 			ndpTriggerButtonClass: 'btn btn-primary btn-sm'
 		});
                 ST('#nepaliDate7').nepaliDatePicker({
@@ -45,7 +45,7 @@ var ST = jQuery.noConflict();
 			npdMonth: true,
 			npdYear: true,
 			ndpTriggerButton: true,
-			ndpTriggerButtonText: 'Date',
+			ndpTriggerButtonText: 'मिति',
 			ndpTriggerButtonClass: 'btn btn-primary btn-sm'
 		});
                 ST('#nepaliDate8').nepaliDatePicker({
@@ -53,7 +53,7 @@ var ST = jQuery.noConflict();
 			npdMonth: true,
 			npdYear: true,
 			ndpTriggerButton: true,
-			ndpTriggerButtonText: 'Date',
+			ndpTriggerButtonText: 'मिति',
 			ndpTriggerButtonClass: 'btn btn-primary btn-sm'
 		});
 		ST('#nepaliDate9').nepaliDatePicker({
@@ -61,7 +61,7 @@ var ST = jQuery.noConflict();
 			npdMonth: true,
 			npdYear: true,
 			ndpTriggerButton: true,
-			ndpTriggerButtonText: 'Date',
+			ndpTriggerButtonText: 'मिति',
 			ndpTriggerButtonClass: 'btn btn-primary btn-sm'
 		});
                 ST('#nepaliDate10').nepaliDatePicker({
@@ -69,7 +69,7 @@ var ST = jQuery.noConflict();
 			npdMonth: true,
 			npdYear: true,
 			ndpTriggerButton: true,
-			ndpTriggerButtonText: 'Date',
+			ndpTriggerButtonText: 'मिति',
 			ndpTriggerButtonClass: 'btn btn-primary btn-sm'
 		});
                 ST('#nepaliDate11').nepaliDatePicker({
@@ -77,7 +77,7 @@ var ST = jQuery.noConflict();
 			npdMonth: true,
 			npdYear: true,
 			ndpTriggerButton: true,
-			ndpTriggerButtonText: 'Date',
+			ndpTriggerButtonText: 'मिति',
 			ndpTriggerButtonClass: 'btn btn-primary btn-sm'
 		});
                 ST('#nepaliDate12').nepaliDatePicker({
@@ -85,7 +85,7 @@ var ST = jQuery.noConflict();
 			npdMonth: true,
 			npdYear: true,
 			ndpTriggerButton: true,
-			ndpTriggerButtonText: 'Date',
+			ndpTriggerButtonText: 'मिति',
 			ndpTriggerButtonClass: 'btn btn-primary btn-sm'
 		});
                 ST('#nepaliDate13').nepaliDatePicker({
@@ -93,7 +93,7 @@ var ST = jQuery.noConflict();
 			npdMonth: true,
 			npdYear: true,
 			ndpTriggerButton: true,
-			ndpTriggerButtonText: 'Date',
+			ndpTriggerButtonText: 'मिति',
 			ndpTriggerButtonClass: 'btn btn-primary btn-sm'
 		});
                 ST('#nepaliDate14').nepaliDatePicker({
@@ -101,7 +101,7 @@ var ST = jQuery.noConflict();
 			npdMonth: true,
 			npdYear: true,
 			ndpTriggerButton: true,
-			ndpTriggerButtonText: 'Date',
+			ndpTriggerButtonText: 'मिति',
 			ndpTriggerButtonClass: 'btn btn-primary btn-sm'
 		});
                 ST('#nepaliDate15').nepaliDatePicker({
@@ -109,7 +109,7 @@ var ST = jQuery.noConflict();
 			npdMonth: true,
 			npdYear: true,
 			ndpTriggerButton: true,
-			ndpTriggerButtonText: 'Date',
+			ndpTriggerButtonText: 'मिति',
 			ndpTriggerButtonClass: 'btn btn-primary btn-sm'
 		});
 		     ST('#nepaliDate16').nepaliDatePicker({
@@ -117,7 +117,7 @@ var ST = jQuery.noConflict();
 			npdMonth: true,
 			npdYear: true,
 			ndpTriggerButton: false,
-			ndpTriggerButtonText: 'Date',
+			ndpTriggerButtonText: 'मिति',
 			ndpTriggerButtonClass: 'btn btn-primary btn-sm'
 		});
 		 ST('#nepaliDate25').nepaliDatePicker({
@@ -125,7 +125,7 @@ var ST = jQuery.noConflict();
 			npdMonth: true,
 			npdYear: true,
 			ndpTriggerButton: true,
-			ndpTriggerButtonText: 'Date',
+			ndpTriggerButtonText: 'मिति',
 			ndpTriggerButtonClass: 'btn btn-primary btn-sm'
 		});
 		 ST('#nepaliDate26').nepaliDatePicker({
@@ -133,7 +133,7 @@ var ST = jQuery.noConflict();
 			npdMonth: true,
 			npdYear: true,
 			ndpTriggerButton: true,
-			ndpTriggerButtonText: 'Date',
+			ndpTriggerButtonText: 'मिति',
 			ndpTriggerButtonClass: 'btn btn-primary btn-sm'
 		});
 		 ST('#nepaliDate27').nepaliDatePicker({
@@ -141,7 +141,7 @@ var ST = jQuery.noConflict();
 			npdMonth: true,
 			npdYear: true,
 			ndpTriggerButton: true,
-			ndpTriggerButtonText: 'Date',
+			ndpTriggerButtonText: 'मिति',
 			ndpTriggerButtonClass: 'btn btn-primary btn-sm'
 		});
 		ST('#nepaliDate').nepaliDatePicker({
@@ -154,7 +154,7 @@ var ST = jQuery.noConflict();
 			npdMonth: true,
 			npdYear: true,
 			ndpTriggerButton: true,
-			ndpTriggerButtonText: 'Date',
+			ndpTriggerButtonText: 'मिति',
 			ndpTriggerButtonClass: 'btn btn-primary btn-sm'
                         
 		});

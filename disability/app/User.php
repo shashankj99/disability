@@ -21,4 +21,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // has many relation with disable
+    public function disables() {
+        return $this->hasMany(Disable::class);
+    }
 }

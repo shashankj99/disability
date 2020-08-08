@@ -18,5 +18,5 @@ Route::group(['middleware' => ['can:isAdmin']], function () {
 
 // disability routes
 Route::match(['get', 'post'], '/disable', 'DisableController@index')->name('disable.index');
-Route::post('disable', 'DisableController@store')->name('disable.store');
+Route::post('disable/store', 'DisableController@store')->name('disable.store');
 Route::resource('disable', 'DisableController', ['except' => ['index', 'store']]);
