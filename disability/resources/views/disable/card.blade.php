@@ -53,7 +53,7 @@
                                         </div>
                                         <div class="row">
                                          <div class="col"> जारी मिति: <span class="input-padder">{{ $disable->citizenship_issued_date_nepali }}</span></div>
-                                            <div class="col">लिङ्ग: <span class="input-padder">{{ $nepGender }}</span></div>
+                                            <div class="col">लिङ्ग: <span class="input-padder">{{ $disable->getGender() }}</span></div>
                                             <div class="col">रक्त समुह: <span class="input-padder">{{ $disable->blood_group }}</span></div>
                                         </div>
                                         <div class="row">
@@ -124,7 +124,7 @@
                                             <div class="col-4">Types of Disability:</div>
                                             <div class="col-8">
                                                 <div class="row">
-                                                <div class="col">On the basis of Nature: <span class="input-padder">{{$category}}</span></div>
+                                                <div class="col">On the basis of Nature: <span class="input-padder">{{$disable->getDisabilityCategory() }}</span></div>
                                             </div>
                                             <div class="row">
                                                 <div class="col">On the basis of Severity: <span class="input-padder">{{$severity}}</span></div>

@@ -9,7 +9,7 @@
 @section('content-header')
     <div class="row mb-2">
         <div class="col-12">
-            <h1 class="m-0 text-dark">अपाङ्ग व्यक्ती व्यवस्थापन पृष्ठ</h1>
+            <h1 class="m-0 text-dark">जेष्ठ नागरिक व्यवस्थापन पृष्ठ</h1>
         </div>
     </div>
 @endsection
@@ -43,8 +43,8 @@
     <div class="row">
         <div class="col-12 col-sm-12 col-md-4"></div>
         <div class="col-12 col-sm-12 col-md-4 my-2">
-            <a href="{{ route('disable.create') }}" class="btn btn-block btn-primary">
-                <i class="fas fa-plus"></i> अपाङ्ग व्यक्ती विवरण थप्नुहोस्
+            <a href="{{ route('senior.create') }}" class="btn btn-block btn-primary">
+                <i class="fas fa-plus"></i> जेष्ठ नागरिक विवरण थप्नुहोस्
             </a>
         </div>
         <div class="col-12 col-sm-12 col-md-4"></div>
@@ -65,9 +65,9 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                    <form action="{{ route('disable.index') }}" method="POST">
+                    <form action="{{ route('senior.index') }}" method="POST">
                         @csrf
-                        @include('disable._filter', ['districtNames' => $districtNames, 'localLevelNames' => $localLevelNames, 'numberConverter' => $numberConverter])
+                        @include('senior_citizen._filter', ['districtNames' => $districtNames, 'localLevelNames' => $localLevelNames, 'numberConverter' => $numberConverter])
                     </form>
                 </div>
               <!-- /.card-body -->
@@ -80,39 +80,39 @@
     <div class="row my-3">
         <div class="col-12">
             <div class="table-responsive-sm">
-                <table class="table table-hover" id="disable-table">
+                <table class="table table-hover" id="senior-table">
                     <thead>
                         <tr>
                             <th>क्रम संख्या</th>
                             <th>नाम</th>
-                            <th>जन्म मिति (उमेर)</th>
+                            <th>जन्म मिति</th>
+                            <th>उमेर</th>
                             <th>लिङ्ग</th>
                             <th>ठेगाना</th>
                             <th>रक्त समूह</th>
-                            <th>अपाङ्गताको प्रकृति</th>
-                            <th>अपाङ्गताको गम्भिरता</th>
+                            <th>नागरिकता प्र.नं.</th>
                             <th>कार्यहरू</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($disables as $disable)
+                        @foreach ($seniorCitizens as $senior)
                             <tr>
                                 <td>{{ ++$i }}</td>
-                                <td>{{ $disable->nep_name }}</td>
-                                <td>{{ $disable->dob_nepali }} {{ " (". $disable->age.") " }}</td>
-                                <td> {{ $disable->getGender() }}</td>
-                                <td>{{ $disable->local_level." - ".$numberConverter->devanagari($disable->ward_no).", ".$disable->district.", ".$disable->state }}</td>
-                                <td>{{ $disable->blood_group }}</td>
-                                <td>{{ $disable->disability_category }}</td>
-                                <td>{{ $disable->disability_severity }}</td>
+                                <td>{{ $senior->name }}</td>
+                                <td>{{ $senior->dob_nepali }}</td>
+                                <td>{{ $numberConverter->devanagari($senior->age) }}</td>
+                                <td> {{ $senior->getGender() }}</td>
+                                <td>{{ $senior->local_level." - ".$numberConverter->devanagari($senior->ward_no).", ".$senior->district.", ".$senior->state }}</td>
+                                <td>{{ $senior->blood_group }}</td>
+                                <td>{{ $senior->citizenship_no }}</td>
                                 <td>
-                                    <a href="{{ route('disable.show', $disable->id) }}" class="btn btn-outline-info btn-sm show-details" data-toggle="tooltip" data-placement="top" title="अपाङ्ग कार्ड हेर्नुहोस्">
+                                    <a href="{{ route('senior.show', $senior->id) }}" class="btn btn-outline-info btn-sm show-details" data-toggle="tooltip" data-placement="top" title="जेष्ठ नागरिक कार्ड हेर्नुहोस्">
                                         <i class="far fa-id-card"></i>
                                     </a>
-                                    <a href="{{ route('disable.edit', $disable->id) }}" class="btn btn-outline-success btn-sm edit-details" data-toggle="tooltip" data-placement="top" title="विवरण सम्पादन गर्नुहोस्">
+                                    <a href="{{ route('senior.edit', $senior->id) }}" class="btn btn-outline-success btn-sm edit-details" data-toggle="tooltip" data-placement="top" title="विवरण सम्पादन गर्नुहोस्">
                                         <i class="fas fa-edit"></i>
                                     </a>
-                                    <a href="#" class="btn btn-outline-danger btn-sm delete-disable" data-id="{{ $disable->id }}" data-toggle="tooltip" data-placement="top" title="विवरण हटाउनुहोस्">
+                                    <a href="#" class="btn btn-outline-danger btn-sm delete-senior" data-id="{{ $senior->id }}" data-toggle="tooltip" data-placement="top" title="विवरण हटाउनुहोस्">
                                         <i class="fas fa-trash"></i>
                                     </a>
                                 </td>
@@ -140,12 +140,12 @@
     <script>
         jQuery(function($) {
             // data table
-            $('#disable-table').DataTable({
+            $('#senior-table').DataTable({
                 dom: 'Bfrtip',
                 buttons: [
                     {
                         extend: "print",
-                        title: "अपाङ्ग व्यक्ती व्यवस्थापन",
+                        title: "जेष्ठ नागरिक व्यवस्थापन",
                         exportOptions: {
                             columns: [1, 2, 3, 4, 5, 6, 7],
                         },
@@ -153,7 +153,7 @@
                     },
                     {
                         extend: "excel",
-                        title: "अपाङ्ग व्यक्ती व्यवस्थापन",
+                        title: "जेष्ठ नागरिक व्यवस्थापन",
                         exportOptions: {
                             columns: [1, 2, 3, 4, 5, 6, 7],
                         },
@@ -168,12 +168,12 @@
             // select 2
             $('.select2').select2();
 
-            $('#disable-table').on('click', '.delete-disable', function(e) {
+            $('#senior-table').on('click', '.delete-senior', function(e) {
                 e.preventDefault();
 
                 if (confirm("के तपाई निश्चित यो विवरण हटाउन चाहानुहुन्छ?")) {
                     let id = this.dataset.id,
-                        url = "{{ route('disable.destroy', ':id') }}";
+                        url = "{{ route('senior.destroy', ':id') }}";
 
                     url = url.replace(":id", id);
 

@@ -22,8 +22,17 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    // has many relation with disable
+    /**
+     * Get all the disables created by the user
+     */
     public function disables() {
         return $this->hasMany(Disable::class);
+    }
+
+    /**
+     * Get all the senior citizens created by the user
+     */
+    public function seniorCitizens() {
+        return $this->hasMany(SeniorCitizen::class);
     }
 }

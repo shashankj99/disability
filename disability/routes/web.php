@@ -20,3 +20,8 @@ Route::group(['middleware' => ['can:isAdmin']], function () {
 Route::match(['get', 'post'], '/disable', 'DisableController@index')->name('disable.index');
 Route::post('disable/store', 'DisableController@store')->name('disable.store');
 Route::resource('disable', 'DisableController', ['except' => ['index', 'store']]);
+
+// senior citizens routes
+Route::match(['get', 'post'], '/senior', 'SeniorCitizenController@index')->name('senior.index');
+Route::post('senior/store', 'SeniorCitizenController@store')->name('senior.store');
+Route::resource('senior', 'SeniorCitizenController', ['except' => ['index', 'store']]);

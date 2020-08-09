@@ -36,7 +36,7 @@
     @else
         <div class="col-12 col-sm-12 col-md-9 my-2">
             <div class="text-center">
-                <span class="text-danger"><i>** केही फिल्टर विकल्पहरू प्रयोग गर्न प्रयोगकर्तालाई निषेध गरिएको छ |</i></span class="text-danger">
+                <span class="text-danger"><i>** प्रदेश, जिल्ला र स्थान्य तहका फिल्टर विकल्पहरू प्रयोग गर्न प्रयोगकर्तालाई निषेध गरिएको छ |</i></span class="text-danger">
             </div>
         </div>
     @endcan
@@ -82,6 +82,16 @@
             <option value="अति असक्त">अति असक्त</option>
             <option value="मध्यम">मध्यम</option>
             <option value="सामान्य">सामान्य</option>
+        </select>
+    </div>
+
+    {{-- gender --}}
+    <div class="col-12 col-sm-6 col-md-3 my-2">
+        <select name="gender" id="gender" class="form-control select2">
+            <option value="">-- लिङ्ग छनौट गर्नुहोस् -- </option>
+            <option value="male">पुरुष</option>
+            <option value="female">महिला</option>
+            <option value="other">तेस्रो लिङ्गी</option>
         </select>
     </div>
 

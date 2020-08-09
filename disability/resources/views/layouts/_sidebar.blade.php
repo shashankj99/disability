@@ -36,6 +36,14 @@
                     </a>
                 </li>
             </ul>
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <li class="nav-item">
+                    <a href="{{ route('senior.index') }}" class="nav-link {{ Request::is('senior*') ? "active" : "" }}">
+                        <i class="nav-icon fas fa-blind"></i>
+                        <p>जेष्ठ नागरिक व्यवस्थापन</p>
+                    </a>
+                </li>
+            </ul>
         </nav>
     </div>
     <!-- /.sidebar -->

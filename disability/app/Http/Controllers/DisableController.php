@@ -66,6 +66,15 @@ class DisableController extends Controller
                 }
             }
 
+            // check for gender
+            if ($request->gender) {
+                if (Auth::user()->email == config('app.admin')) {
+                    $disables->where('gender', $request->gender);
+                } else {
+                    $disables->userId()->where('gender', $request->gender);
+                }
+            }
+
             $disables = $disables->get();
 
         } else {
@@ -117,14 +126,6 @@ class DisableController extends Controller
     public function show(Disable $disable, NumberConverter $numberConverter) {
         $cardColor = ''; $nepaliType = ''; $engType = ''; $severity = ''; $nepGender = ''; $category = '';
 
-        if ($disable->gender == 'male') {
-            $nepGender = 'पुरुष';
-        } else if ($disable->gender == 'male') {
-            $nepGender = 'महिला';
-        } else {
-            $nepGender = 'तेस्रो लिङ्गी';
-        }
-
         if ($disable->disability_severity == 'पूर्ण') {
             $cardColor = 'purna';
             $nepaliType = 'क';
@@ -146,34 +147,8 @@ class DisableController extends Controller
             $engType = 'D';
             $severity = 'Normal';
         }
-
-        if ($disable->disability_category == "शारीरिक अपाङ्गता") {
-            $category = 'Physical disability';
-        } else if ($disable->disability_category == "स्वर बोलाई अपाङगता") {
-            $category = 'Speech Impaired';
-        } else if ($disable->disability_category == "बहिरा") {
-            $category = 'Hearing Impaired';
-        } else if ($disable->disability_category == "वौद्धिक अपाङ्ग वा सुस्त मनस्थिति") {
-            $category = 'Mentally retarded';
-        } else if ($disable->disability_category == "अटिजम") {
-            $category = 'Autism';
-        } else if ($disable->disability_category == "होमोफेलिया") {
-            $category = 'Homophilia';
-        } else if ($disable->disability_category == "मनो समाजीक अपाङ्गता") {
-            $category = 'Psychosocial disability';
-        } else if ($disable->disability_category == "वहु अपाङगता") {
-            $category = 'Multiple disabilities';
-        } else if ($disable->disability_category == "पूर्ण दृस्टी बिहिन") {
-            $category = 'Completely blind';
-        } else if ($disable->disability_category == "दृस्टी बिहिन") {
-            $category = 'Blindness';
-        } else if ($disable->disability_category == "न्युन दृस्टी बिहिन") {
-            $category = 'Low vision';
-        } else {
-            $category = 'Dull hearing';
-        }
         
-        return view('disable.card', compact('disable', 'numberConverter', 'cardColor', 'nepaliType', 'engType', 'severity', 'nepGender', 'category'));
+        return view('disable.card', compact('disable', 'numberConverter', 'cardColor', 'nepaliType', 'engType', 'severity'));
     }
 
     public function edit(Disable $disable, NumberConverter $numberConverter) {

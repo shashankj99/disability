@@ -220,7 +220,7 @@
 <div class="form-group row">
 
     <div class="col-md-3">
-        <input id="citizenship_no" type="text" class="form-control @error('citizenship_no') is-invalid @enderror" name="citizenship_no" @isset($disable) value="{{ $disable->citizenship_no }}" @else value="{{ old('citizenship_no') }}" @endisset required autocomplete="citizenship_no" autofocus placeholder="ना.प्रा.नं लेख्नुहोस्">
+        <input id="citizenship_no" type="text" class="form-control @error('citizenship_no') is-invalid @enderror" name="citizenship_no" @isset($disable) value="{{ $disable->citizenship_no }}" @else value="{{ old('citizenship_no') }}" @endisset autocomplete="citizenship_no" autofocus placeholder="ना.प्रा.नं लेख्नुहोस्">
 
         @error('citizenship_no')
             <span class="invalid-feedback" role="alert">
@@ -230,7 +230,7 @@
     </div>
 
     <div class="col-md-3">
-        <select name="citizenship_issued_district" id="citizenship_issued_district" class="form-control select2 @error('citizenship_issued_district') is-invalid @enderror" required>
+        <select name="citizenship_issued_district" id="citizenship_issued_district" class="form-control select2 @error('citizenship_issued_district') is-invalid @enderror">
             <option value="">ना.प्रा. जारी जिल्ला छनौट गर्नुहोस्</option>
             @for ($i = 0; $i < count($districtNames); $i++)
                 <option value="{{ $districtNames[$i] }}" {{ ($disable->citizenship_issued_district == $districtNames[$i]) ? "selected" : ""}}>{{ $districtNames[$i] }}</option>
@@ -247,7 +247,7 @@
     <label for="citizenship_issued_date_nepali" class="col-md-1 col-form-label text-md-right">{{ __('जारी मिति') }}</label>
 
     <div class="col-md-2">
-        <input id="nepaliDate5" type="text" class="form-control @error('citizenship_issued_date_nepali') is-invalid @enderror" name="citizenship_issued_date_nepali" @isset($disable) value="{{ $disable->citizenship_issued_date_nepali }}" @else value="{{ old('citizenship_issued_date_nepali') }}" @endisset required autocomplete="citizenship_issued_date_nepali" autofocus placeholder="yyyy-mm-dd">
+        <input id="nepaliDate5" type="text" class="form-control @error('citizenship_issued_date_nepali') is-invalid @enderror" name="citizenship_issued_date_nepali" @isset($disable) value="{{ $disable->citizenship_issued_date_nepali }}" @else value="{{ old('citizenship_issued_date_nepali') }}" @endisset autocomplete="citizenship_issued_date_nepali" autofocus placeholder="yyyy-mm-dd">
 
         @error('citizenship_issued_date_nepali')
             <span class="invalid-feedback" role="alert">
@@ -259,7 +259,7 @@
     <label for="citizenship_issued_date_english" class="col-md-1 col-form-label text-md-right">{{ __('Issued Date') }}</label>
 
     <div class="col-md-2">
-        <input id="citizenship_issued_date_english" type="date" class="form-control @error('citizenship_issued_date_english') is-invalid @enderror" name="citizenship_issued_date_english" @isset($disable) value="{{ $disable->citizenship_issued_date_english }}" @else value="{{ old('citizenship_issued_date_english') }}" @endisset required autocomplete="citizenship_issued_date_english" autofocus placeholder="mm/dd/yyy">
+        <input id="citizenship_issued_date_english" type="date" class="form-control @error('citizenship_issued_date_english') is-invalid @enderror" name="citizenship_issued_date_english" @isset($disable) value="{{ $disable->citizenship_issued_date_english }}" @else value="{{ old('citizenship_issued_date_english') }}" @endisset autocomplete="citizenship_issued_date_english" autofocus placeholder="mm/dd/yyy">
 
         @error('citizenship_issued_date_english')
             <span class="invalid-feedback" role="alert">
