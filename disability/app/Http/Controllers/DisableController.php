@@ -26,38 +26,50 @@ class DisableController extends Controller
 
             // check for the state
             if ($request->state) {
-                $disables->userId()->where('state', $request->state);
+                $disables->where('state', $request->state);
             }
 
             // check for the district
             if ($request->district) {
-                $disables->userId()->where('district', $request->district);
+                $disables->where('district', $request->district);
             }
 
             // check for the local level
             if ($request->local_level) {
-                $disables->userId()->where('local_level', $request->local_level);
+                $disables->where('local_level', $request->local_level);
             }
 
             // check for the ward no
             if ($request->ward_no) {
-                $disables->userId()->where('ward_no', $request->ward_no);
+                if (Auth::user()->email == config('app.admin')) {
+                    $disables->where('ward_no', $request->ward_no);
+                } else {
+                    $disables->userId()->where('ward_no', $request->ward_no);
+                }
             }
 
             // check for the disability category
             if ($request->disability_category) {
-                $disables->userId()->where('disability_category', $request->disability_category);
+                if (Auth::user()->email == config('app.admin')) {
+                    $disables->where('disability_category', $request->disability_category);
+                } else {
+                    $disables->userId()->where('disability_category', $request->disability_category);
+                }
             }
 
             // check for disability_severity
             if ($request->disability_severity) {
-                $disables->userId()->where('disability_severity', $request->disability_severity);
+                if (Auth::user()->email == config('app.admin')) {
+                    $disables->where('disability_severity', $request->disability_severity);
+                } else {
+                    $disables->userId()->where('disability_severity', $request->disability_severity);
+                }
             }
 
             $disables = $disables->get();
 
         } else {
-            $disables = Disable::userId()->get();
+            $disables = (Auth::user()->email == config('app.admin')) ? Disable::all() : Disable::userId()->get();
         }
         return view('disable.index')
             ->with('i', $i=0)
