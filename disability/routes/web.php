@@ -30,3 +30,6 @@ Route::resource('senior', 'SeniorCitizenController', ['except' => ['index', 'sto
 Route::get('/import/sheet', 'ExcelController@index')->name('excel');
 Route::post('/import/sheet/disability', 'ExcelController@disability')->name('import.disability');
 Route::post('/import/sheet/senior', 'ExcelController@senior')->name('import.senior');
+
+// certifier route
+Route::resource('certifier', 'CertifierController');

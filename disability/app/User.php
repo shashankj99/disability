@@ -35,4 +35,11 @@ class User extends Authenticatable
     public function seniorCitizens() {
         return $this->hasMany(SeniorCitizen::class);
     }
+
+    /**
+     * Get all the certifiers created by the user
+     */
+    public function certifiers() {
+        return $this->hasMany(Certifier::class);
+    }
 }
