@@ -25,3 +25,8 @@ Route::resource('disable', 'DisableController', ['except' => ['index', 'store']]
 Route::match(['get', 'post'], '/senior', 'SeniorCitizenController@index')->name('senior.index');
 Route::post('senior/store', 'SeniorCitizenController@store')->name('senior.store');
 Route::resource('senior', 'SeniorCitizenController', ['except' => ['index', 'store']]);
+
+// import excel file in database
+Route::get('/import/sheet', 'ExcelController@index')->name('excel');
+Route::post('/import/sheet/disability', 'ExcelController@disability')->name('import.disability');
+Route::post('/import/sheet/senior', 'ExcelController@senior')->name('import.senior');

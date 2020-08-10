@@ -44,6 +44,14 @@
                     </a>
                 </li>
             </ul>
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <li class="nav-item">
+                    <a href="{{ route('excel') }}" class="nav-link {{ Request::is('import*') ? "active" : "" }}">
+                        <i class="nav-icon fas fa-file-excel"></i>
+                        <p>एक्सेल डेटा आयात गर्नुहोस्</p>
+                    </a>
+                </li>
+            </ul>
         </nav>
     </div>
     <!-- /.sidebar -->
