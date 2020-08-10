@@ -33,3 +33,7 @@ Route::post('/import/sheet/senior', 'ExcelController@senior')->name('import.seni
 
 // certifier route
 Route::resource('certifier', 'CertifierController');
+
+// invokable routes
+Route::get('/districts', 'DistrictController')->name('district');
+Route::get('/local-level', 'LocalLevelController')->name('local-level');

@@ -60,6 +60,22 @@
                     </a>
                 </li>
             </ul>
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <li class="nav-item">
+                    <a href="{{ route('district') }}" class="nav-link {{ Request::is('districts*') ? "active" : "" }}">
+                        <i class="nav-icon far fa-list-alt"></i>
+                        <p>जिल्ला तालिका पृष्ठ </p>
+                    </a>
+                </li>
+            </ul>
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <li class="nav-item">
+                    <a href="{{ route('local-level') }}" class="nav-link {{ Request::is('local-level*') ? "active" : "" }}">
+                        <i class="nav-icon far fa-list-alt"></i>
+                        <p>स्थान्य तह तालिका पृष्ठ </p>
+                    </a>
+                </li>
+            </ul>
         </nav>
     </div>
     <!-- /.sidebar -->
